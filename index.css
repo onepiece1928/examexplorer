@@ -1,0 +1,255 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  background-image: url('/images/bg.jpg');
+  background-size: cover; /* Adjust the image size to cover the entire screen */
+  background-position: center center; /* Center the image horizontally and vertically */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow-x: auto; /* Allow horizontal scrolling for small devices */
+}
+
+/* styles for header and navigation */
+.header-container {
+  display: flex;
+  flex-direction: column; /* Set flex-direction to column to place navigation below the logo */
+  align-items: center;
+  padding: 10px;
+  width: fit-content;
+  margin: auto;
+  margin-top: 50px;
+  background-color: #97b0a9;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+nav {
+  margin-top: 20px; /* Add some space between the logo and navigation */
+  border: 2px solid; /* Fallback border style */
+  border-image: linear-gradient(to right, #ff4d4d, #ffad33, #ffff33, #66ff66, #4ddbff, #9933ff);
+  border-image-slice: 1;
+  padding: 5px;
+  width: fit-content;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+  border-right: 1px solid #ccc; /* Add right border to create partition */
+  padding-right: 10px; /* Add some spacing between items */
+}
+
+nav li:last-child {
+  border-right: none; /* Remove right border for the last item */
+}
+
+nav li a {
+  color: inherit;
+  text-decoration: none;
+  /* Add gradient background and hover effect */
+  background: linear-gradient(
+      to right,
+      rgba(100, 200, 200, 1),
+      rgba(100, 200, 200, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+    );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+/* Add transition properties to the navigation list items */
+/* Add a hover effect to change the background color of the navigation list items */
+
+nav li a:hover {
+  /* Adjust the background size on hover to create the pop effect */
+  background-size: 0 3px, 100% 3px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+table {
+  background-color: #fff;
+  padding: 10px; /* Reduce the padding for small screens */
+  margin: 10px; /* Reduce the margin for small screens */
+  border: 2px solid red;
+  border-radius: 5px;
+  min-width: 250px; /* Reduce the minimum width for small screens */
+  max-width: 100%; /* Set the maximum width of the table to fit the screen */
+  overflow: hidden; /* Hide any overflowing content within the table */
+  margin-bottom: 20px; /* Add equal distance between tables */
+}
+
+table caption {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 10px;
+  background-color: #e91414;
+  color: #fff; /* Set caption text color to white */
+}
+
+/* Additional style for Latest Jobs */
+.latest-jobs {
+  grid-column: span 3; /* Span across all 3 columns */
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center; /* Center-align the items */
+  flex-wrap: wrap; /* Allow wrapping for small screens */
+}
+
+.footer-section {
+  flex: 0 0 calc(33.33% - 20px); /* Each section takes up 33.33% width minus some spacing */
+  margin: 10px;
+}
+
+.footer-section h3 {
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 5px;
+}
+
+.footer-section a {
+  color: #333;
+  text-decoration: none;
+  transition: color 200ms;
+}
+
+.footer-section a:hover {
+  color: #ff4d4d;
+}
+
+
+/* Additional styles for logo and heading */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 12em; /* Adjust the height of the logo image */
+  width: auto;
+  margin-right: 10px; /* Add some spacing between the logo and heading */
+}
+
+h1 {
+  margin: 3px;
+  font-size: 24px;
+  color: rgb(8, 8, 8); /* Set heading text color to black */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  nav {
+    border: none; /* Remove border for small screens */
+  }
+  
+  nav li {
+    display: block;
+    margin: 10px 0;
+    border-right: none; /* Remove right border for small screens */
+    padding-right: 0; /* Remove right padding for small screens */
+  }
+
+  main {
+    grid-template-columns: 1fr; /* Change to single column for small screens */
+  }
+
+  /* Additional styles for responsive navigation */
+  nav {
+    padding: 10px; /* Add padding to the navigation for spacing */
+    width: 100%; /* Set the width to fill the available space */
+    text-align: center; /* Center-align the navigation items */
+  }
+
+  nav li {
+    margin: 5px 0; /* Adjust the margin for spacing between navigation items */
+  }
+
+/* Additional styles for logo and heading on small screens */
+.logo img {
+  height: 15em; /* Adjust the height of the logo image */
+}
+
+h1 {
+  margin: 3px;
+  font-size: 18px;
+  color: rgb(8, 8, 8); /* Set heading text color to black */
+  font-family: 'Courier New', Courier, monospace;
+}
+}
+
+/* Additional styles for Sarkari Result */
+.sarkari-result {
+  margin-top: 20px;
+  overflow: hidden; /* Hide any overflowing content */
+  text-align: center; /* Center the text horizontally */
+  background-color: #e4f0ef; /* Set background color for the container */
+}
+
+.sarkari-result h2 {
+  font-size: 12px;
+  display: inline-block;
+  animation: vibration 1s linear infinite; /* Animation to make the text vibrate */
+  white-space: nowrap; /* Prevent text from breaking into multiple lines by default */
+}
+
+/* Additional styles for Sarkari Result on small screens */
+@media screen and (max-width: 768px) {
+  .sarkari-result h2 {
+    white-space: normal; /* Allow text to break into multiple lines on small screens */
+  }
+}
+
+
+/* Keyframes for the animation */
+@keyframes vibration {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-4px); } /* Move left by 2 pixels */
+  50% { transform: translateX(0); } /* Move back to the original position */
+  75% { transform: translateX(4px); } /* Move right by 2 pixels */
+  100% { transform: translateX(0); } /* Move back to the original position */
+}
+

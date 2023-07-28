@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="/contact-us.css" type="text/css"/>  
+</head>
+<body>
+  <main>
+    <section class="contact-us" id="contactFormSection">
+      <h2>Contact Us</h2>
+      <form id="contactForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+        
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <div class="result-message" id="resultMessage">
+      <h2>Message Sent Successfully!</h2>
+    </div>
+  </main>
+  <script>
+    // Function to handle form submission
+    function handleSubmit(event) {
+      event.preventDefault();
+      // Validate form fields (You can add more validation logic if needed)
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value;
+
+      if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Submit the form (You can send the form data to an email using AJAX or fetch API here)
+      // For this example, we'll just show the success message in a pop-up window and reset the form
+      showSuccessMessage();
+      document.getElementById('contactForm').reset();
+    }
+
+    // Function to show the success message in a pop-up window
+    function showSuccessMessage() {
+      alert('Message Sent Successfully!');
+    }
+
+    // Add event listener to the submit button
+    const submitButton = document.querySelector('button[type="submit"]');
+    submitButton.addEventListener('click', handleSubmit);
+  </script>
+</body>
+</html>
